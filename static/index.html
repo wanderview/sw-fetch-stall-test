@@ -1,0 +1,53 @@
+<html>
+<head>
+<script>
+navigator.serviceWorker.register('/sw.js', {
+  scope: './'
+}).then(function (reg) {
+  console.log(reg);
+}, function(err) {
+  console.log(err);
+});
+
+function addImages() {
+  urlList = [
+    'https://farm8.staticflickr.com/7452/16573123155_ee0c56de07_c.jpg',
+    'https://farm9.staticflickr.com/8587/16571716612_5b608f5dd3_c.jpg',
+    'https://farm8.staticflickr.com/7404/16571487691_05e894c85c_c.jpg',
+    'https://farm8.staticflickr.com/7386/16571380211_4d25f23e7d_c.jpg',
+    'https://farm8.staticflickr.com/7380/16547069256_d6fb9f398a_c.jpg',
+    'https://farm8.staticflickr.com/7356/16386914787_59b15c0eea_c.jpg',
+    'https://farm8.staticflickr.com/7440/16385635610_cd19dec034_c.jpg',
+    'https://farm9.staticflickr.com/8592/16385513108_d674d47ca8_c.jpg',
+    'https://farm9.staticflickr.com/8571/15952917143_6d484ac8d3_c.jpg',
+    'https://farm9.staticflickr.com/8606/15950272594_1aef346d1d_c.jpg'
+  ];
+  var imgList = document.getElementById('imgList');
+  urlList.forEach(function (url) {
+    var img = document.createElement('img');
+    img.src = url;
+    imgList.appendChild(img);
+  });
+}
+
+window.onload = addImages;
+
+</script>
+</head>
+<body>
+<div id="imgList">
+<!--
+<img src="https://farm8.staticflickr.com/7452/16573123155_ee0c56de07_c.jpg">
+<img src="https://farm9.staticflickr.com/8587/16571716612_5b608f5dd3_c.jpg">
+<img src="https://farm8.staticflickr.com/7404/16571487691_05e894c85c_c.jpg">
+<img src="https://farm8.staticflickr.com/7386/16571380211_4d25f23e7d_c.jpg">
+<img src="https://farm8.staticflickr.com/7380/16547069256_d6fb9f398a_c.jpg">
+<img src="https://farm8.staticflickr.com/7356/16386914787_59b15c0eea_c.jpg">
+<img src="https://farm8.staticflickr.com/7440/16385635610_cd19dec034_c.jpg">
+<img src="https://farm9.staticflickr.com/8592/16385513108_d674d47ca8_c.jpg">
+<img src="https://farm9.staticflickr.com/8571/15952917143_6d484ac8d3_c.jpg">
+<img src="https://farm9.staticflickr.com/8606/15950272594_1aef346d1d_c.jpg">
+-->
+</div>
+</body>
+</html>
